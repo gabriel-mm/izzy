@@ -1,1 +1,51 @@
+public class Animal {
+	private String name;
+	private double age;
+	private String size;
+	private String sex;
+	private double price;
+	
+	// Add more characteristics here
+	
+	
+	// // TODO  No arg constructor
+	public Animal() {
+		
+	}
+
+	public Animal(String type, double age, double weight) {
+		this.name = name;
+		this.age = age;
+		this.size = size;
+	}
+	
+		
+	public String getType() {
+		return name;
+	}
+	public void setType(String type) {
+		this.name = name;
+	}
+	public String getWeight() {
+		return size;
+	}
+	public void setSize(String size) {
+		this.size = size;
+	}
+	
+	public double getAge() {
+		return age;
+	}
+	public void setAge(double age) {
+		this.age = age;
+	}
+	
+	// TODO 
+	public String toString() {
+		return "";
+	}
+	
+	
+	
+}
 
