@@ -1,24 +1,69 @@
-import java.awt.Color;
-import java.awt.Graphics2D;
+import java.util.Scanner;
 
-public class ColorfulCircle extends Circle {
-
-	private Color color;
+public class Program {
+	Animal[] animals;
+	int index;
 	
-	public ColorfulCircle(double radius, double centerX, double centerY, Color color) {
-		super(radius, centerX, centerY);
-		this.color = color;
+	public Program() {
+		this.animals = new Animal[5];
+		this.index = 0;
+	}
+	
+	public Program(Animal[] animals) {
+		this.animals = animals;
+		this.index = animals.length;
+	}
+	
+	public int promptNumberReadLine(Scanner s, String prompt, int max) {
+		System.out.println(prompt);
+		String input = s.nextLine();
+		try 
+		{
+			int i = Integer.parseInt(input);
+			if (i >=1 && i <= max) {
+				return i;
+			}
+		}
+		catch (NumberFormatException e) {
+		}
+		System.out.println("That was not a valid input! Please try again.");
+		return promptNumberReadLine(s, prompt, max);
+	}
+	
+	// TODO
+	public String listAnimals() {
+		// Iterate over animals and add to string
+		 String listAnimals = "";
+		 // Use for loop to iterate over animals
+		 // 
+		//listAnimals += animal[i].getType() + " " + ...;
+		return listAnimals;
+	}
+	// TODO
+	public void addAnimal(Animal animal) {
+		// Add animal to animals array using the index instance
+		//animals[index++] = animal
+	}
+	
+	// TODO 
+	public void start() {
+		// Call on this method to start program
+		// Most of the implementation goes here
+		// Add animals to the animals array
+		// e.g. Animal animal = new Animal("Dog", 4, 40);
+		// addAnimal(animal);
+		//  Show menu
+		// Scanner s = new Scanner(System.in);
+		// String prompt = "Enter your choice"
+		// int max = 3
+		// int choice = promptNumberReadLine(scanner, prompt, max) 
+		// * Enter 1 to show list of animals
+		// * Enter 2 to ...
+		// * Enter 0 to Exit
+		// If they enter 1 call on listAnimals and display the string to the screen
+		// Ask them to select an individual animal to display more information on that animal
+		// ...
 	}
 
-	// The Override annotation below is not necessary, but it ensures that this method
-	// correctly matches up with a method in Circle or another superclass.	
-	@Override
-	
-	public void draw(Graphics2D g) {
-		Color c = g.getColor();
-		g.setColor(color);
-		super.draw(g);
-		g.setColor(c);
-	}
 
 }
